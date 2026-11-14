@@ -1,0 +1,16 @@
+services:
+  mundo:
+    build: .
+    image: hackathon-unifei-mundo
+    environment:
+      TEMA: ${TEMA:-triagem}
+      ERROS: ${ERROS:-}
+      SEED: ${SEED:-}
+      SEGUNDOS_POR_DIA: ${SEGUNDOS_POR_DIA:-}
+      SEM_CENARIO: ${SEM_CENARIO:-}
+      PORTA_PUBLICA: ${PORTA:-8765}
+      TZ: America/Sao_Paulo
+    ports:
+      - "${PORTA:-8765}:8765"
+    volumes:
+      - ./logs:/app/logs
